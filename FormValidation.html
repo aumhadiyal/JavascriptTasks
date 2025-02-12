@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script>
+        
+        function validateForm()
+        {
+            var name = document.getElementById("name").value;
+            var mobile = document.getElementById("mobile").value;
+            if(name == "")
+            {
+                alert("Name cannot be empty");
+                return false;
+            }
+            if(mobile == "" || mobile.length != 10)
+            {
+                alert("Mobile number should be of 10 digits");
+                return false;
+            }
+            if(document.getElementById("gender").checked == false)
+            {
+                alert("Select 1 gender");
+                return false;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="validateForm()">
+        <h3>Enter Name :  
+        <input type="text" id="name"required/>
+        </h3>  
+        <h3>
+        Mobile Number : <input type="number" id="mobile"required/>
+        </h3>   
+        <h3>Gender:</h3>
+
+        <label for="Male">Male</label>
+        <input type="radio" name="gender" value="Male" id="Male"  required/>
+        <label for="Female">Female</label>
+        <input type="radio" name="gender" value="Female" id="Female"required />
+        
+        <h3>Hobbies:</h3>
+        <input type="checkbox" name="hobby" value="Minesweeper" id="Minesweeper" />
+        <label for="Minesweeper">Minesweeper</label>
+        <input type="checkbox" name="hobby" value="Games" id="Games" />
+        <label for="Games">Games</label>
+        <input type="checkbox" name="hobby" value="Novels" id="Novels" />
+        <label for="Novels">Novels</label>
+        <input type="checkbox" name="hobby" value="Singing" id="Singing" />
+        <label for="Singing">Singing</label>
+        <h3>City:</h3>
+        <select title="Select City" id="city"required>
+            <option value="" disabled selected>Select City</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Patna">Patna</option>
+        </select>
+        <br>
+        <hr>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <script>
+        var running = false;
+        var timer = 0;
+        function start()
+        {
+            if(!running)
+            {
+                running = true;
+                incrementTimer();
+            }
+        }
+        function incrementTimer()
+        {
+            if(running)
+            {
+                timer+=1;
+                document.getElementById("timer").innerHTML = timer;
+                setTimeout(incrementTimer, 1000);
+
+            }
+        }
+        function pause()
+        {
+            running = false;
+        }
+        function stop()
+        {
+            running =false;
+            timer = 0;
+            document.getElementById("timer").innerHTML = 0;
+            return
+        }
+    </script>
+</head>
+<body>
+    <h1>Timer</h1>
+    <hr>
+    <p id="timer">
+        0
+    </p>
+    <hr>
+    <button onclick="start()"> Start</button>
+    <button onclick="pause()"> Pause</button>
+    <button onclick="stop()"> Stop</button>
+    
+
+</body>
+</html>

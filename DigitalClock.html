@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <script>
+        function updateClock() 
+        {
+            var now = new Date();
+            document.getElementById("Date").innerHTML = now.getDate();
+            document.getElementById("Month").innerHTML = now.getMonth() + 1; 
+            document.getElementById("Year").innerHTML = now.getFullYear();
+            document.getElementById("Hours").innerHTML = now.getHours();
+            document.getElementById("Minutes").innerHTML = now.getMinutes();
+        }
+
+        setInterval(updateClock, 1000); 
+    </script>
+</head>
+<body onload="updateClock()">
+    <hr>
+    <p id="Date"></p>
+    <p id="Month"></p>
+    <p id="Year"></p>
+    <hr>
+    <p id="Hours"></p>
+    <p id="Minutes"></p>
+    <hr>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <script>
+        function increment()
+        {
+            var count = parseInt(document.getElementById("counter").innerHTML) + 1;
+            if(count>10)
+            {
+                document.getElementById("info").innerHTML = "Error.!! Cant go above 10";
+                return    
+            }
+            document.getElementById("info").innerHTML = "";
+            document.getElementById("counter").innerHTML = count;
+        }
+        function decrement()
+        {
+            var count = parseInt(document.getElementById("counter").innerHTML) - 1;
+            if(count<0)
+            {
+                document.getElementById("info").innerHTML = "Error.!! Cant go below 0";    
+                return
+            }
+            document.getElementById("info").innerHTML = "";
+            document.getElementById("counter").innerHTML = count;
+        }
+    </script>
+</head>
+<body>
+    <h1>Counter</h1>
+    <p id="counter">
+        0
+    </p>
+    <hr>
+    <p id="info" style="color:red"></p>
+    <button onclick="increment()"> Increment</button>
+    <button onclick="decrement()"> Decrement</button>
+    
+
+</body>
+</html>

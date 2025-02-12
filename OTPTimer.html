@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Timer</title>
+    <script>
+        var timer = 5;
+        var intervalId;
+
+        function startTimer() {
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
+            timer = 5;
+            document.getElementById("timer").innerHTML = timer;
+            intervalId = setInterval(decreaseTime, 1000);
+        }
+
+        function decreaseTime() {
+            if (timer > 0) {
+                timer--;
+                document.getElementById("timer").innerHTML = timer;
+            } else {
+                clearInterval(intervalId);
+                document.getElementById("generateButton").innerHTML = "Resend OTP";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="generateButton" onclick="startTimer()">Generate OTP</button>
+    <div>00:0<span id="timer">5</span> Seconds</div>
+</body>
+</html>
